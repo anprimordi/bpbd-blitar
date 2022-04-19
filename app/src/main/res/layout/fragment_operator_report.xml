@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.report.OperatorReportContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.report.OperatorReportContract.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.operator.report.OperatorReportFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="?attr/colorFormBackground"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_tab_waiting"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/gradient_operator"
+                    android:gravity="center"
+                    android:onClick="@{() -> view.showPagerAt(0)}"
+                    android:padding="16dp"
+                    android:text="@string/plain_on_process"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?attr/colorOnSecondary" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_tab_finished"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{() -> view.showPagerAt(1)}"
+                    android:padding="16dp"
+                    android:text="@string/plain_finished"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?attr/colorHint" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager_report"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_tab" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

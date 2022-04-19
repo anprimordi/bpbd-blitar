@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/user_graph"
+    app:startDestination="@id/userHomeFragment">
+
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.home.UserHomeFragment"
+        android:label="UserHomeFragment" >
+        <action
+            android:id="@+id/action_userHomeFragment_to_userReportListFragment"
+            app:destination="@id/userReportListFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_userCovidFragment"
+            app:destination="@id/userCovidFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_userEarthQuakeFragment"
+            app:destination="@id/userEarthQuakeFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_userProfileDetailFragment"
+            app:destination="@id/userProfileDetailFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_userSatelliteFragment"
+            app:destination="@id/userSatelliteFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_userVolcanoFragment"
+            app:destination="@id/userVolcanoFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_userReportDetailFragment"
+            app:destination="@id/userReportDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userReportFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.report.UserReportFragment"
+        android:label="UserReportFragment" >
+        <action
+            android:id="@+id/action_userReportFragment_to_userReportCreateFragment"
+            app:destination="@id/userReportCreateFragment" />
+        <action
+            android:id="@+id/action_userReportFragment_to_userReportDetailFragment"
+            app:destination="@id/userReportDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.profile.UserProfileFragment"
+        android:label="UserProfileFragment" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_userProfileAboutFragment"
+            app:destination="@id/userProfileAboutFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userProfileDetailFragment"
+            app:destination="@id/userProfileDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userCovidFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.covid.UserCovidFragment"
+        android:label="UserCovidFragment" />
+    <fragment
+        android:id="@+id/userEarthQuakeFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.earthquake.UserEarthQuakeFragment"
+        android:label="UserEarthQuakeFragment" />
+    <fragment
+        android:id="@+id/userNewsFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.news.UserNewsFragment"
+        android:label="UserNewsFragment" >
+        <argument
+            android:name="news"
+            app:argType="id.go.blitarkab.bpbd.domain.model.News" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileAboutFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.profile.about.UserProfileAboutFragment"
+        android:label="UserProfileAboutFragment" />
+    <fragment
+        android:id="@+id/userProfileDetailFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.profile.detail.UserProfileDetailFragment"
+        android:label="UserProfileDetailFragment" >
+        <action
+            android:id="@+id/action_userProfileDetailFragment_to_userProfileUpdateFragment"
+            app:destination="@id/userProfileUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileUpdateFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.profile.update.UserProfileUpdateFragment"
+        android:label="UserProfileUpdateFragment" />
+    <fragment
+        android:id="@+id/userReportCreateFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.report.create.UserReportCreateFragment"
+        android:label="UserReportCreateFragment" >
+        <action
+            android:id="@+id/action_userReportCreateFragment_to_userReportCreateLocationFragment"
+            app:destination="@id/userReportCreateLocationFragment" />
+        <action
+            android:id="@+id/action_userReportCreateFragment_to_addPhotoChooserFragment"
+            app:destination="@id/addPhotoChooserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userReportListFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.report.list.UserReportListFragment"
+        android:label="UserReportListFragment" >
+        <action
+            android:id="@+id/action_userReportListFragment_to_userReportDetailFragment"
+            app:destination="@id/userReportDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userReportCreateLocationFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.report.create.location.UserReportCreateLocationFragment"
+        android:label="UserReportCreateLocationFragment" />
+    <fragment
+        android:id="@+id/userSatelliteFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.satellite.UserSatelliteFragment"
+        android:label="UserSatelliteFragment" />
+    <fragment
+        android:id="@+id/userVolcanoFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.volcano.UserVolcanoFragment"
+        android:label="UserVolcanoFragment" />
+    <fragment
+        android:id="@+id/userReportDetailFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.report.detail.UserReportDetailFragment"
+        android:label="UserReportDetailFragment" >
+        <argument
+            android:name="reportId"
+            app:argType="long" />
+        <argument
+            android:name="isHistory"
+            app:argType="boolean" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_userReportCreateFragment"
+        app:destination="@id/userReportCreateFragment" />
+    <fragment
+        android:id="@+id/userNewsListFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.news.list.UserNewsListFragment"
+        android:label="UserNewsListFragment" >
+        <action
+            android:id="@+id/action_userNewsListFragment_to_userNewsFragment"
+            app:destination="@id/userNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userGuideFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.guide.UserGuideFragment"
+        android:label="UserGuideFragment" >
+        <action
+            android:id="@+id/action_userGuideFragment_to_userGuideDetailFragment"
+            app:destination="@id/userGuideDetailFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addPhotoChooserFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.main.others.AddPhotoChooserFragment"
+        android:label="AddPhotoChooserFragment" />
+    <fragment
+        android:id="@+id/userGuideDetailFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.guide.detail.UserGuideDetailFragment"
+        android:label="UserGuideDetailFragment" >
+        <argument
+            android:name="guide"
+            app:argType="id.go.blitarkab.bpbd.domain.model.Guide" />
+    </fragment>
+</navigation>

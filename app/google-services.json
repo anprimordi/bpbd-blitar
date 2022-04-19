@@ -1,0 +1,100 @@
+{
+  "project_info": {
+    "project_number": "156753819754",
+    "project_id": "krakatio-projects",
+    "storage_bucket": "krakatio-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156753819754:android:f1f73513a96555a1303213",
+        "android_client_info": {
+          "package_name": "id.go.blitarkab.bpbd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156753819754-5mgpo93hovj2q921c2fh20h566l0v98m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.go.blitarkab.bpbd",
+            "certificate_hash": "a7986aec850a7bde460396638b11bb74391e4012"
+          }
+        },
+        {
+          "client_id": "156753819754-6lp01s40gloh9q181nkqcp1jpo0n82ro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.go.blitarkab.bpbd",
+            "certificate_hash": "5abe1cbc8fef411b7511a0517e64c6a0b81421f0"
+          }
+        },
+        {
+          "client_id": "156753819754-n6lu1giepja2e476ge3k6e2vkaofkg6l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChfE4DTN4mLHgSxtYYRVvl3e_jvyBwZi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156753819754-n6lu1giepja2e476ge3k6e2vkaofkg6l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156753819754:android:de00cc73ebd432ce303213",
+        "android_client_info": {
+          "package_name": "id.go.blitarkab.bpbd.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156753819754-12go6jfbf9bis7534ekkg7qokebl0ru2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.go.blitarkab.bpbd.debug",
+            "certificate_hash": "a7986aec850a7bde460396638b11bb74391e4012"
+          }
+        },
+        {
+          "client_id": "156753819754-jlb64jsg6gmnkuctqikk1c6c6og3s8fb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.go.blitarkab.bpbd.debug",
+            "certificate_hash": "5abe1cbc8fef411b7511a0517e64c6a0b81421f0"
+          }
+        },
+        {
+          "client_id": "156753819754-n6lu1giepja2e476ge3k6e2vkaofkg6l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChfE4DTN4mLHgSxtYYRVvl3e_jvyBwZi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156753819754-n6lu1giepja2e476ge3k6e2vkaofkg6l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

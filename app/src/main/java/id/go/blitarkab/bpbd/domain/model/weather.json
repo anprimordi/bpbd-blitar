@@ -1,0 +1,1059 @@
+{
+  "status": true,
+  "message": "Data weather successfully retrieved.",
+  "data": [
+    {
+      "city": "Bangkalan",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "33",
+        "tomorrow_min": "25",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "3.215 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "151.9",
+        "tomorrow_avg": "225.0"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Banyuwangi",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "24",
+        "today_max": "32",
+        "tomorrow_min": "25",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "180.0",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Berawan"
+      }
+    },
+    {
+      "city": "Batu",
+      "humidity": {
+        "today_min": "75",
+        "today_max": "100",
+        "tomorrow_min": "75",
+        "tomorrow_max": "100"
+      },
+      "temperature": {
+        "today_min": "17",
+        "today_max": "28",
+        "tomorrow_min": "17",
+        "tomorrow_max": "27"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "174.4",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Bojonegoro",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "25",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "230.6",
+        "tomorrow_avg": "219.4"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Bondowoso",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "100",
+        "tomorrow_min": "70",
+        "tomorrow_max": "100"
+      },
+      "temperature": {
+        "today_min": "20",
+        "today_max": "30",
+        "tomorrow_min": "20",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "191.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Gresik",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "90",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "26",
+        "today_max": "34",
+        "tomorrow_min": "25",
+        "tomorrow_max": "35"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "230.6",
+        "tomorrow_avg": "225.0"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Jember",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "22",
+        "today_max": "31",
+        "tomorrow_min": "22",
+        "tomorrow_max": "31"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "196.9",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Jombang",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "24",
+        "today_max": "33",
+        "tomorrow_min": "24",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "196.9",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Kabupaten Blitar",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "19",
+        "today_max": "29",
+        "tomorrow_min": "20",
+        "tomorrow_max": "29"
+      },
+      "wind_speed": {
+        "today_avg": "2.829 m/s",
+        "tomorrow_avg": "3.858 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "168.8",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Kabupaten Kediri",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "19",
+        "today_max": "29",
+        "tomorrow_min": "20",
+        "tomorrow_max": "29"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "3.858 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "191.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Kabupaten Madiun",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "75",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "21",
+        "today_max": "30",
+        "tomorrow_min": "23",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "3.858 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "168.8",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Kabupaten Malang",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "20",
+        "today_max": "30",
+        "tomorrow_min": "21",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "168.8",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Kabupaten Mojokerto",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "100"
+      },
+      "temperature": {
+        "today_min": "20",
+        "today_max": "30",
+        "tomorrow_min": "21",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "2.572 m/s",
+        "tomorrow_avg": "3.858 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "146.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Kabupaten Pasuruan",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "20",
+        "today_max": "30",
+        "tomorrow_min": "21",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "180.0",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Kabupaten Probolinggo",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "20",
+        "today_max": "30",
+        "tomorrow_min": "21",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "4.501 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "185.6",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Kota Blitar",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "22",
+        "today_max": "31",
+        "tomorrow_min": "22",
+        "tomorrow_max": "31"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "168.8",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Kota Kediri",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "23",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "4.501 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "180.0",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Kota Madiun",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "33",
+        "tomorrow_min": "24",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "191.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Kota Malang",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "20",
+        "today_max": "30",
+        "tomorrow_min": "21",
+        "tomorrow_max": "29"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "191.3",
+        "tomorrow_avg": "219.4"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Kota Mojokerto",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "24",
+        "today_max": "33",
+        "tomorrow_min": "24",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "185.6",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Kota Pasuruan",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "90",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "33",
+        "tomorrow_min": "25",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "3.215 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "146.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Kota Probolinggo",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "90",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "33",
+        "tomorrow_min": "25",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "4.501 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "191.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Lamongan",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "24",
+        "today_max": "33",
+        "tomorrow_min": "25",
+        "tomorrow_max": "34"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "236.3",
+        "tomorrow_avg": "225.0"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Lumajang",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "23",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "185.6",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Magetan",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "100",
+        "tomorrow_min": "75",
+        "tomorrow_max": "100"
+      },
+      "temperature": {
+        "today_min": "21",
+        "today_max": "30",
+        "tomorrow_min": "20",
+        "tomorrow_max": "30"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "191.3",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Lebat"
+      }
+    },
+    {
+      "city": "Nganjuk",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "22",
+        "today_max": "32",
+        "tomorrow_min": "22",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "213.8",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Lebat"
+      }
+    },
+    {
+      "city": "Ngawi",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "33",
+        "tomorrow_min": "23",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "213.8",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Pacitan",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "24",
+        "tomorrow_max": "31"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "168.8",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Berawan",
+        "tomorrow": "Cerah Berawan"
+      }
+    },
+    {
+      "city": "Pamekasan",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "32",
+        "tomorrow_min": "24",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "202.5",
+        "tomorrow_avg": "225.0"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Berawan"
+      }
+    },
+    {
+      "city": "Ponorogo",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "23",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "163.1",
+        "tomorrow_avg": "213.8"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Sampang",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "32",
+        "tomorrow_min": "24",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "230.6",
+        "tomorrow_avg": "230.6"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Sidoarjo",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "90",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "34",
+        "tomorrow_min": "25",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "225.0",
+        "tomorrow_avg": "213.8"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Situbondo",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "31",
+        "tomorrow_min": "23",
+        "tomorrow_max": "31"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "196.9",
+        "tomorrow_avg": "208.1"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Sumenep",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "25",
+        "today_max": "32",
+        "tomorrow_min": "25",
+        "tomorrow_max": "33"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "230.6",
+        "tomorrow_avg": "225.0"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Surabaya",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "90",
+        "tomorrow_min": "60",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "26",
+        "today_max": "35",
+        "tomorrow_min": "25",
+        "tomorrow_max": "34"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "230.6",
+        "tomorrow_avg": "213.8"
+      },
+      "weather": {
+        "today": "Hujan Ringan",
+        "tomorrow": "Hujan Sedang"
+      }
+    },
+    {
+      "city": "Trenggalek",
+      "humidity": {
+        "today_min": "70",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "100"
+      },
+      "temperature": {
+        "today_min": "22",
+        "today_max": "31",
+        "tomorrow_min": "22",
+        "tomorrow_max": "31"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "146.3",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Tuban",
+      "humidity": {
+        "today_min": "60",
+        "today_max": "95",
+        "tomorrow_min": "70",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "24",
+        "today_max": "33",
+        "tomorrow_min": "24",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.472 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "196.9",
+        "tomorrow_avg": "225.0"
+      },
+      "weather": {
+        "today": "Hujan Petir",
+        "tomorrow": "Hujan Petir"
+      }
+    },
+    {
+      "city": "Tulungagung",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "23",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "174.4",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    },
+    {
+      "city": "Pelabuhan Surabaya",
+      "humidity": {
+        "today_min": "65",
+        "today_max": "95",
+        "tomorrow_min": "65",
+        "tomorrow_max": "95"
+      },
+      "temperature": {
+        "today_min": "23",
+        "today_max": "32",
+        "tomorrow_min": "23",
+        "tomorrow_max": "32"
+      },
+      "wind_speed": {
+        "today_avg": "3.858 m/s",
+        "tomorrow_avg": "4.501 m/s"
+      },
+      "wind_direction": {
+        "today_avg": "174.4",
+        "tomorrow_avg": "202.5"
+      },
+      "weather": {
+        "today": "Cerah Berawan",
+        "tomorrow": "Hujan Ringan"
+      }
+    }
+  ]
+}

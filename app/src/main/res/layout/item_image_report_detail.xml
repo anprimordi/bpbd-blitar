@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="String" />
+    </data>
+
+    <ImageView
+        android:id="@+id/image_report"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/shape_rounded_rect_8"
+        android:backgroundTint="?attr/colorFormBackground"
+        android:contentDescription="@null"
+        app:srcRemote="@{item}"
+        app:srcRemoteError="@{@drawable/img_bpbd_24}"
+        app:srcRemotePlaceholder="@{@drawable/img_bpbd_24}" />
+</layout>

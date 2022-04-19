@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.main.login.LoginContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.main.login.LoginContract.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.main.login.LoginFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/plain_hello_with_comma"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/plain_welcome"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_hello" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/plain_email"
+            app:layout_constraintTop_toBottomOf="@id/text_welcome"
+            app:startIconDrawable="@drawable/ic_email_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.BPBD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{!presenter.stateLoading}"
+                android:inputType="textEmailAddress"
+                android:text="@={presenter.emailObservable}"
+                tools:text="deriarmanda@test.com" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/plain_password"
+            app:endIconDrawable="@drawable/ic_password_toggle"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="@id/input_email"
+            app:layout_constraintStart_toStartOf="@id/input_email"
+            app:layout_constraintTop_toBottomOf="@id/input_email"
+            app:startIconDrawable="@drawable/ic_password_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.BPBD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{!presenter.stateLoading}"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:text="@={presenter.passwordObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="@{!presenter.stateLoading}"
+            android:onClick="@{() -> view.openForgotPasswordPage()}"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="@string/action_forgot_password"
+            android:textAppearance="?attr/textAppearanceCaption2"
+            android:textColor="?attr/colorTextSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_password" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_message_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="@string/msg_doesnt_have_account"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/text_action_register"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_action_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="@{!presenter.stateLoading}"
+            android:onClick="@{() -> view.openRegisterPage()}"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="@string/action_register"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?attr/colorSecondary"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_message_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_message_register" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:enabled="@{!presenter.stateLoading}"
+            android:onClick="@{() -> presenter.login()}"
+            android:text="@string/action_enter"
+            app:icon="@drawable/ic_enter_24"
+            app:layout_constraintBottom_toTopOf="@id/text_action_register"
+            app:layout_constraintEnd_toEndOf="@id/input_email"
+            app:layout_constraintStart_toStartOf="@id/input_email" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:isVisible="@{presenter.stateLoading}"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

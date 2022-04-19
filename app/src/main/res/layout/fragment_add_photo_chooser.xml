@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.main.others.AddPhotoChooserContract.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".presentation.ui.main.others.AddPhotoChooserFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/action_add_photo"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_action_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_oval"
+            android:backgroundTint="?attr/colorFormBackground"
+            android:contentDescription="@null"
+            android:onClick="@{() -> view.onCameraChosen()}"
+            android:padding="12dp"
+            android:src="@drawable/ic_outline_photo_camera_32"
+            app:layout_constraintStart_toStartOf="@id/text_title"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            app:tint="?attr/colorSecondary" />
+
+        <ImageView
+            android:id="@+id/image_action_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/shape_oval"
+            android:backgroundTint="?attr/colorFormBackground"
+            android:contentDescription="@null"
+            android:onClick="@{() -> view.onGalleryChosen()}"
+            android:padding="12dp"
+            android:src="@drawable/ic_outline_image_32"
+            app:layout_constraintStart_toEndOf="@id/image_action_camera"
+            app:layout_constraintTop_toTopOf="@id/image_action_camera"
+            app:tint="?attr/colorSecondary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/action_camera"
+            android:textAppearance="?attr/textAppearanceCaption2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/image_action_camera"
+            app:layout_constraintStart_toStartOf="@id/image_action_camera"
+            app:layout_constraintTop_toBottomOf="@id/image_action_camera" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/action_gallery"
+            android:textAppearance="?attr/textAppearanceCaption2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/image_action_gallery"
+            app:layout_constraintStart_toStartOf="@id/image_action_gallery"
+            app:layout_constraintTop_toBottomOf="@id/image_action_gallery" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

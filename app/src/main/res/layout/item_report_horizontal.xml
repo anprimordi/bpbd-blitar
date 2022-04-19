@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="id.go.blitarkab.bpbd.presentation.util.DateTimeFormatter" />
+
+        <variable
+            name="item"
+            type="id.go.blitarkab.bpbd.domain.model.Report" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:id="@+id/card_item"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:srcRemote="@{item.thumbnailUrl}"
+                app:srcRemoteError="@{@drawable/placeholder_image_24}"
+                app:srcRemotePlaceholder="@{@drawable/placeholder_image_24}"
+                android:background="?attr/colorFormBackground"
+                android:scaleType="centerInside"
+                android:src="@drawable/placeholder_image_24"
+                android:contentDescription="@null" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:text="@{item.title}"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="?attr/textAppearanceBody2"
+                tools:text="@tools:sample/lorem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:text="@{DateTimeFormatter.formatDateTime(item.datetime)}"
+                android:maxLines="1"
+                android:textAppearance="?attr/textAppearanceCaption1"
+                android:textColor="?attr/colorTextSecondary"
+                tools:text="@tools:sample/lorem" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

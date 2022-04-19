@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.InputType" />
+
+        <variable
+            name="covid"
+            type="id.go.blitarkab.bpbd.domain.model.Covid" />
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.home.OperatorHomeContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.home.OperatorHomeContract.Presenter" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{() -> presenter.loadData()}"
+        app:refreshing="@{presenter.stateLoading}"
+        tools:context=".presentation.ui.operator.home.OperatorHomeFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_welcome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/plain_welcome"
+                    android:textAppearance="?attr/textAppearanceCaption1"
+                    android:textColor="?attr/colorTextSecondary"
+                    app:layout_constraintEnd_toStartOf="@id/image_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintEnd_toEndOf="@id/text_welcome"
+                    app:layout_constraintStart_toStartOf="@id/text_welcome"
+                    app:layout_constraintTop_toBottomOf="@id/text_welcome"
+                    tools:text="Deri Armanda" />
+
+                <ImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_rounded_rect_8"
+                    android:backgroundTint="?attr/colorIndicator"
+                    android:contentDescription="@null"
+                    android:onClick="@{() -> view.openProfileDetailPage()}"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_placeholder_account_24"
+                    app:layout_constraintBottom_toBottomOf="@id/text_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/text_welcome" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_weather"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/text_name">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_home_weather_operator">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_home_bubble"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_hint_today"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/plain_today"
+                            android:textAppearance="?attr/textAppearanceSubtitle2"
+                            android:textColor="?attr/colorOnSecondary"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_today"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:ems="6"
+                            android:maxEms="6"
+                            android:textAppearance="?attr/textAppearanceCaption1"
+                            android:textColor="?attr/colorOnSecondary"
+                            app:layout_constraintStart_toStartOf="@id/text_hint_today"
+                            app:layout_constraintTop_toBottomOf="@id/text_hint_today"
+                            tools:text="Senin, 6 Okt" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_weather_area"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:boxCollapsedPaddingTop="0dp"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp"
+                            app:endIconMode="dropdown_menu"
+                            app:endIconTint="?attr/colorOnSecondary"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_today"
+                            app:startIconDrawable="@drawable/ic_pin_point_16"
+                            app:startIconTint="?attr/colorOnSecondary">
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                android:id="@+id/choice_weather_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="@{InputType.TYPE_NULL}"
+                                android:minHeight="48dp"
+                                android:paddingStart="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="0dp"
+                                android:textAppearance="?attr/textAppearanceBody1"
+                                android:textColor="?attr/colorOnSecondary"
+                                tools:text="Surabaya" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.constraintlayout.widget.Barrier
+                            android:id="@+id/barrier_today"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:barrierDirection="end"
+                            app:constraint_referenced_ids="text_hint_today,text_today" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_temperature"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?attr/colorOnSecondary"
+                            app:drawableTint="?attr/colorOnSecondary"
+                            app:drawableTopCompat="@drawable/ic_temperature_24"
+                            app:layout_constraintBottom_toBottomOf="@id/text_today"
+                            app:layout_constraintEnd_toStartOf="@id/text_humidity"
+                            app:layout_constraintStart_toEndOf="@id/barrier_today"
+                            app:layout_constraintTop_toTopOf="@id/text_hint_today"
+                            tools:text="40c" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_humidity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?attr/colorOnSecondary"
+                            app:drawableTint="?attr/colorOnSecondary"
+                            app:drawableTopCompat="@drawable/ic_humidity_24"
+                            app:layout_constraintBottom_toBottomOf="@id/text_today"
+                            app:layout_constraintEnd_toStartOf="@id/text_wind"
+                            app:layout_constraintStart_toEndOf="@id/text_temperature"
+                            app:layout_constraintTop_toTopOf="@id/text_hint_today"
+                            tools:text="40%" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_wind"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:drawablePadding="4dp"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?attr/colorOnSecondary"
+                            app:drawableTint="?attr/colorOnSecondary"
+                            app:drawableTopCompat="@drawable/ic_wind_24"
+                            app:layout_constraintBottom_toBottomOf="@id/text_today"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/text_humidity"
+                            app:layout_constraintTop_toTopOf="@id/text_hint_today"
+                            tools:text="40Km/h" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_volcano"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="?attr/colorIndicator"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/card_weather">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_volcano_detail"
+                            style="@style/Widget.BPBD.Button.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="12dp"
+                            android:onClick="@{() -> view.openVolcanoPage()}"
+                            android:text="@string/action_see"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/title_volcano"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/button_volcano_detail"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_title_covid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/title_covid_information"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintEnd_toStartOf="@id/button_covid_detail"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/card_volcano" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_msg_covid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/msg_covid_information"
+                    android:textAppearance="?attr/textAppearanceCaption1"
+                    android:textColor="?attr/colorTextSecondary"
+                    app:layout_constraintEnd_toStartOf="@id/button_covid_detail"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/text_title_covid" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_covid_detail"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:onClick="@{() -> view.openCovidPage()}"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/action_see_detail"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/text_msg_covid"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintTop_toTopOf="@id/text_title_covid" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_covid_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> view.openCovidPage()}"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toStartOf="@id/card_covid_positive"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/text_msg_covid">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/plain_total_case"
+                            android:textAppearance="?attr/textAppearanceCaption1"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="@{covid.totalCase}"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            tools:text="1234" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_covid_total" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_covid_positive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:onClick="@{() -> view.openCovidPage()}"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintStart_toEndOf="@id/card_covid_total"
+                    app:layout_constraintTop_toTopOf="@id/card_covid_total">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/plain_positive"
+                            android:textAppearance="?attr/textAppearanceCaption1"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="@{covid.totalPositive}"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            tools:text="1234" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_covid_positive" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_covid_recovered"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> view.openCovidPage()}"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toStartOf="@id/card_covid_died"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/card_covid_total">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/plain_recovered"
+                            android:textAppearance="?attr/textAppearanceCaption1"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="@{covid.totalRecovered}"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            tools:text="1234" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_covid_recovered" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_covid_died"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:onClick="@{() -> view.openCovidPage()}"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintStart_toEndOf="@id/card_covid_recovered"
+                    app:layout_constraintTop_toTopOf="@id/card_covid_recovered">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/plain_died"
+                            android:textAppearance="?attr/textAppearanceCaption1"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="@{covid.totalDied}"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            tools:text="1234" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_covid_died" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_title_earth_quake"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/title_newest_earth_quake"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintEnd_toStartOf="@id/button_earth_quake_detail"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/card_covid_recovered" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_earth_quake_detail"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:onClick="@{() -> view.openEarthQuakePage()}"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/action_see_detail"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/text_title_earth_quake"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintTop_toTopOf="@id/text_title_earth_quake" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_earth_quake"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:onClick="@{() -> view.openEarthQuakePage()}"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/text_title_earth_quake">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/map_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_home_earth_quake">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_earth_quake_date_time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/layout_earth_quake_magnitude"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/image_earth_quake_date_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/shape_oval"
+                                android:backgroundTint="?attr/colorStatus1"
+                                android:contentDescription="@null"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_time_20"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="?attr/colorOnSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_earth_quake_date_time_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textAppearance="?attr/textAppearanceCaption2"
+                                app:layout_constraintBottom_toTopOf="@id/text_earth_quake_date_time_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/image_earth_quake_date_time"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed"
+                                tools:text="15 Agu 2021" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_earth_quake_date_time_content"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textAppearance="?attr/textAppearanceOverline1"
+                                android:textColor="?attr/colorTextSecondary"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/text_earth_quake_date_time_title"
+                                app:layout_constraintStart_toStartOf="@id/text_earth_quake_date_time_title"
+                                app:layout_constraintTop_toBottomOf="@id/text_earth_quake_date_time_title"
+                                tools:text="12:45:35 WIB" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="?attr/colorHint"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/layout_earth_quake_magnitude"
+                            app:layout_constraintStart_toEndOf="@id/layout_earth_quake_date_time"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_earth_quake_magnitude"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/layout_earth_quake_location"
+                            app:layout_constraintStart_toEndOf="@id/layout_earth_quake_date_time"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/image_earth_quake_magnitude"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/shape_oval"
+                                android:backgroundTint="?attr/colorStatus2"
+                                android:contentDescription="@null"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_magnitude_20"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="?attr/colorOnSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_earth_quake_magnitude_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textAppearance="?attr/textAppearanceCaption2"
+                                app:layout_constraintBottom_toTopOf="@id/text_earth_quake_magnitude_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/image_earth_quake_magnitude"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed"
+                                tools:text="15 Agu 2021" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_earth_quake_magnitude_content"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/plain_magnitude"
+                                android:textAppearance="?attr/textAppearanceOverline1"
+                                android:textColor="?attr/colorTextSecondary"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/text_earth_quake_magnitude_title"
+                                app:layout_constraintStart_toStartOf="@id/text_earth_quake_magnitude_title"
+                                app:layout_constraintTop_toBottomOf="@id/text_earth_quake_magnitude_title"
+                                tools:text="12:45:35 WIB" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="?attr/colorHint"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/layout_earth_quake_location"
+                            app:layout_constraintStart_toEndOf="@id/layout_earth_quake_magnitude"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_earth_quake_location"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/layout_earth_quake_magnitude"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/image_earth_quake_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/shape_oval"
+                                android:backgroundTint="?attr/colorStatus3"
+                                android:contentDescription="@null"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_pin_point_20"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="?attr/colorOnSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_earth_quake_location_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:textAppearance="?attr/textAppearanceCaption2"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/image_earth_quake_location"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed"
+                                tools:text="15 Agu 2021" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_satellite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:cardBackgroundColor="?attr/colorIndicator"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/card_earth_quake">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_satellite_detail"
+                            style="@style/Widget.BPBD.Button.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="12dp"
+                            android:onClick="@{() -> view.openSatellitePage()}"
+                            android:text="@string/action_see"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/title_satellite_short"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/button_satellite_detail"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_title_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/title_report_long"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintEnd_toStartOf="@id/button_report_see_all"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/card_satellite" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_report_see_all"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:onClick="@{() -> view.openReportListPage()}"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/action_see_all"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/text_title_report"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintTop_toTopOf="@id/text_title_report" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_msg_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/msg_report_home"
+                    android:textAppearance="?attr/textAppearanceCaption1"
+                    android:textColor="?attr/colorTextSecondary"
+                    app:layout_constraintEnd_toEndOf="@id/card_weather"
+                    app:layout_constraintStart_toStartOf="@id/card_weather"
+                    app:layout_constraintTop_toBottomOf="@id/text_title_report" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_msg_report"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:listitem="@layout/item_report_user" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_report"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="text_title_report,text_msg_report,list_report" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

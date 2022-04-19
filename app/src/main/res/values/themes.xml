@@ -1,0 +1,172 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.BPBD" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:colorBackground">?attr/colorBackground</item>
+        <item name="android:textColorPrimary">?attr/colorTextPrimary</item>
+        <item name="android:textColorPrimaryInverse">?attr/colorBackground</item>
+        <item name="android:textColorSecondary">?attr/colorTextSecondary</item>
+        <item name="android:textColorSecondaryInverse">?attr/colorBackground</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="materialButtonStyle">@style/Widget.BPBD.Button</item>
+        <item name="snackbarStyle">@style/Widget.BPBD.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.BPBD.Snackbar.Button</item>
+        <item name="snackbarTextViewStyle">@style/Widget.BPBD.Snackbar.Text</item>
+        <item name="textInputStyle">@style/Widget.BPBD.TextInputLayout</item>
+        <item name="editTextStyle">@style/Widget.BPBD.TextInputEditText</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.BPBD.AutoCompleteTextView</item>
+        <item name="android:editTextStyle">@style/Widget.BPBD.TextInputEditText</item>
+        <item name="android:autoCompleteTextViewStyle">@style/Widget.BPBD.AutoCompleteTextView</item>
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.BPBD.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.BPBD.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.BPBD.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.BPBD.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.BPBD.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.BPBD.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.BPBD.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.BPBD.Subtitle2</item>
+        <item name="textAppearanceSubtitle3">@style/TextAppearance.BPBD.Subtitle3</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.BPBD.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.BPBD.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.BPBD.Caption1</item>
+        <item name="textAppearanceCaption1">@style/TextAppearance.BPBD.Caption1</item>
+        <item name="textAppearanceCaption2">@style/TextAppearance.BPBD.Caption2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.BPBD.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.BPBD.Overline1</item>
+        <item name="textAppearanceOverline1">@style/TextAppearance.BPBD.Overline1</item>
+        <item name="textAppearanceOverline2">@style/TextAppearance.BPBD.Overline2</item>
+    </style>
+
+    <style name="Theme.BPBD.User" parent="Theme.BPBD">
+        <item name="colorPrimary">@color/blue_1</item>
+        <item name="colorPrimaryDark">@color/blue_1</item>
+        <item name="colorPrimaryVariant">@color/blue_1</item>
+        <item name="colorAccent">@color/blue_1</item>
+        <item name="colorSecondary">@color/blue_1</item>
+        <item name="colorSecondaryVariant">@color/blue_1</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorError">@color/red_1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/gray_1</item>
+        <item name="colorOnSurface">@color/gray_1</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="colorTextPrimary">@color/gray_1</item>
+        <item name="colorTextSecondary">@color/gray_3</item>
+        <item name="colorDividerSmall">@color/gray_4</item>
+        <item name="colorIndicator">@color/blue_4</item>
+        <item name="colorFormBackground">@color/gray_5</item>
+        <item name="colorHint">@color/gray_3</item>
+        <item name="colorIcon">@color/gray_2</item>
+        <item name="colorStatus1">@color/orange_3</item>
+        <item name="colorStatus2">@color/blue_3</item>
+        <item name="colorStatus3">@color/red_1</item>
+        <item name="colorStatus4">@color/green_1</item>
+    </style>
+
+    <style name="Theme.BPBD.Operator" parent="Theme.BPBD">
+        <item name="colorPrimary">@color/orange_1</item>
+        <item name="colorPrimaryDark">@color/orange_1</item>
+        <item name="colorPrimaryVariant">@color/orange_1</item>
+        <item name="colorAccent">@color/orange_1</item>
+        <item name="colorSecondary">@color/orange_1</item>
+        <item name="colorSecondaryVariant">@color/orange_1</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorError">@color/red_1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/gray_1</item>
+        <item name="colorOnSurface">@color/gray_1</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="colorTextPrimary">@color/gray_1</item>
+        <item name="colorTextSecondary">@color/gray_3</item>
+        <item name="colorDividerSmall">@color/gray_4</item>
+        <item name="colorIndicator">@color/orange_4</item>
+        <item name="colorFormBackground">@color/gray_5</item>
+        <item name="colorHint">@color/gray_3</item>
+        <item name="colorIcon">@color/gray_2</item>
+        <item name="colorStatus1">@color/orange_3</item>
+        <item name="colorStatus2">@color/blue_3</item>
+        <item name="colorStatus3">@color/red_1</item>
+        <item name="colorStatus4">@color/green_1</item>
+    </style>
+
+    <style name="Theme.BPBD.Splash" parent="Theme.BPBD.User">
+        <item name="android:windowBackground">@drawable/bg_splash_screen</item>
+    </style>
+
+    <style name="Theme.BPBD.User.BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="colorPrimary">@color/blue_1</item>
+        <item name="colorPrimaryDark">@color/blue_1</item>
+        <item name="colorPrimaryVariant">@color/blue_1</item>
+        <item name="colorAccent">@color/blue_1</item>
+        <item name="colorSecondary">@color/blue_1</item>
+        <item name="colorSecondaryVariant">@color/blue_1</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorError">@color/red_1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/gray_1</item>
+        <item name="colorOnSurface">@color/gray_1</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="colorTextPrimary">@color/gray_1</item>
+        <item name="colorTextSecondary">@color/gray_3</item>
+        <item name="colorDividerSmall">@color/gray_4</item>
+        <item name="colorIndicator">@color/blue_4</item>
+        <item name="colorFormBackground">@color/gray_5</item>
+        <item name="colorHint">@color/gray_3</item>
+        <item name="colorIcon">@color/gray_2</item>
+        <item name="colorStatus1">@color/orange_3</item>
+        <item name="colorStatus2">@color/blue_3</item>
+        <item name="colorStatus3">@color/red_1</item>
+        <item name="colorStatus4">@color/green_1</item>
+
+        <item name="android:colorBackground">?attr/colorBackground</item>
+        <item name="android:textColorPrimary">?attr/colorTextPrimary</item>
+        <item name="android:textColorPrimaryInverse">?attr/colorBackground</item>
+        <item name="android:textColorSecondary">?attr/colorTextSecondary</item>
+        <item name="android:textColorSecondaryInverse">?attr/colorBackground</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="materialButtonStyle">@style/Widget.BPBD.Button</item>
+        <item name="snackbarStyle">@style/Widget.BPBD.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.BPBD.Snackbar.Button</item>
+        <item name="snackbarTextViewStyle">@style/Widget.BPBD.Snackbar.Text</item>
+        <item name="textInputStyle">@style/Widget.BPBD.TextInputLayout</item>
+        <item name="editTextStyle">@style/Widget.BPBD.TextInputEditText</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.BPBD.AutoCompleteTextView</item>
+        <item name="android:editTextStyle">@style/Widget.BPBD.TextInputEditText</item>
+        <item name="android:autoCompleteTextViewStyle">@style/Widget.BPBD.AutoCompleteTextView</item>
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.BPBD.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.BPBD.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.BPBD.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.BPBD.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.BPBD.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.BPBD.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.BPBD.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.BPBD.Subtitle2</item>
+        <item name="textAppearanceSubtitle3">@style/TextAppearance.BPBD.Subtitle3</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.BPBD.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.BPBD.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.BPBD.Caption1</item>
+        <item name="textAppearanceCaption1">@style/TextAppearance.BPBD.Caption1</item>
+        <item name="textAppearanceCaption2">@style/TextAppearance.BPBD.Caption2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.BPBD.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.BPBD.Overline1</item>
+        <item name="textAppearanceOverline1">@style/TextAppearance.BPBD.Overline1</item>
+        <item name="textAppearanceOverline2">@style/TextAppearance.BPBD.Overline2</item>
+
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.BPBD.BottomSheet</item>
+    </style>
+
+</resources>

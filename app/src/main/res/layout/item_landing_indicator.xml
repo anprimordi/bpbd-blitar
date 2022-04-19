@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp">
+
+        <ImageView
+            android:id="@+id/image_indicator"
+            android:layout_width="24dp"
+            android:layout_height="8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/shape_rounded_rect_8"
+            app:tint="?attr/colorSecondary" />
+    </FrameLayout>
+</layout>

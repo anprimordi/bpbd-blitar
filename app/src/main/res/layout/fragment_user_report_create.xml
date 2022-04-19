@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.InputType" />
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.user.report.create.UserReportCreateContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.user.report.create.UserReportCreateContract.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.user.report.create.UserReportCreateFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_toolbar"
+            style="@style/Widget.BPBD.Toolbar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_action_up"
+                    style="@style/Widget.BPBD.Toolbar.UpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="@{!presenter.stateLoading}"
+                    android:contentDescription="@null"
+                    android:onClick="@{() -> view.closePage()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.BPBD.Toolbar.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_create_report_long"
+                    app:layout_constraintBottom_toBottomOf="@id/image_action_up"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/image_action_up"
+                    app:layout_constraintTop_toTopOf="@id/image_action_up" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="@{!presenter.stateLoading}"
+            android:onClick="@{() -> view.submitReport()}"
+            android:text="@string/action_send"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/button_send"
+            app:layout_constraintTop_toBottomOf="@id/card_toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plain_report_form"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/msg_report_form"
+                    android:textAppearance="?attr/textAppearanceCaption1"
+                    android:textColor="?attr/colorTextSecondary" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/plain_disaster"
+                    app:layout_constraintTop_toBottomOf="@id/text_message">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.BPBD.TextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="@{!presenter.stateLoading}"
+                        android:text="@={presenter.titleObservable}"
+                        tools:text="deriarmanda@test.com" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/plain_description"
+                    app:layout_constraintTop_toBottomOf="@id/text_message">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.BPBD.TextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="@{!presenter.stateLoading}"
+                        android:inputType="textCapSentences"
+                        android:text="@={presenter.contentObservable}"
+                        tools:text="deriarmanda@test.com" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/plain_report_location"
+                    app:layout_constraintTop_toBottomOf="@id/text_message">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.BPBD.TextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="@{!presenter.stateLoading}"
+                        android:imeOptions="actionDone"
+                        android:text="@={presenter.addressObservable}"
+                        tools:text="deriarmanda@test.com" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_coordinate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/plain_coordinate"
+                    app:endIconDrawable="@drawable/ic_pin_point_20"
+                    app:endIconMode="custom"
+                    app:layout_constraintTop_toBottomOf="@id/text_message">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.BPBD.TextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="@{!presenter.stateLoading}"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:text="@{presenter.coordinateObservable}"
+                        tools:text="deriarmanda@test.com" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/plain_report_photo"
+                    android:textAppearance="?attr/textAppearanceBody1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/image_report"
+                        android:layout_width="108dp"
+                        android:layout_height="108dp"
+                        android:background="@drawable/shape_rounded_rect_8"
+                        android:backgroundTint="?attr/colorFormBackground"
+                        android:contentDescription="@null"
+                        android:onClick="@{() -> view.showImageChooserSheet()}"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_camera_24" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_image_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:orientation="horizontal"
+                        tools:listitem="@layout/item_image_report"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:isVisible="@{presenter.stateLoading}"
+            app:layout_constraintBottom_toBottomOf="@id/card_toolbar"
+            app:layout_constraintTop_toBottomOf="@id/card_toolbar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

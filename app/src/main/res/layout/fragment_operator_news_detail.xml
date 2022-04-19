@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="id.go.blitarkab.bpbd.presentation.util.DateTimeFormatter" />
+
+        <variable
+            name="news"
+            type="id.go.blitarkab.bpbd.domain.model.News" />
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.news.detail.OperatorNewsDetailContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.news.detail.OperatorNewsDetailContract.Presenter" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{() -> presenter.loadNewsList()}"
+        app:refreshing="@{presenter.stateLoading}"
+        tools:context=".presentation.ui.operator.news.detail.OperatorNewsDetailFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:srcRemote="@{news.imageUrl}"
+                    app:srcRemoteError="@{@drawable/placeholder_image_24}"
+                    app:srcRemotePlaceholder="@{@drawable/placeholder_image_24}"
+                    android:background="?attr/colorFormBackground"
+                    android:contentDescription="@null"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:clickable="@{!presenter.stateLoading}"
+                    android:onClick="@{() -> view.closePage()}"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="1dp"
+                    app:contentPadding="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_round_arrow_back_ios_24"
+                        app:tint="?attr/colorOnBackground" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_date_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{DateTimeFormatter.formatDate(news.datetime)}"
+                    android:layout_margin="16dp"
+                    android:textAppearance="?attr/textAppearanceCaption1"
+                    android:textColor="?attr/colorTextSecondary"
+                    app:layout_constraintTop_toBottomOf="@id/image_news"
+                    tools:text="@tools:sample/lorem" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{news.title}"
+                    android:layout_marginTop="6dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintEnd_toEndOf="@id/text_date_time"
+                    app:layout_constraintStart_toStartOf="@id/text_date_time"
+                    app:layout_constraintTop_toBottomOf="@id/text_date_time"
+                    tools:text="@tools:sample/lorem" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    app:layout_constraintEnd_toEndOf="@id/text_date_time"
+                    app:layout_constraintStart_toStartOf="@id/text_date_time"
+                    app:layout_constraintTop_toBottomOf="@id/text_title"
+                    tools:text="@tools:sample/lorem" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_other_news"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/title_other_news"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintEnd_toEndOf="@id/text_date_time"
+                    app:layout_constraintStart_toStartOf="@id/text_date_time"
+                    app:layout_constraintTop_toBottomOf="@id/text_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:clipToPadding="false"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_other_news"
+                    tools:listitem="@layout/item_news_horizontal"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

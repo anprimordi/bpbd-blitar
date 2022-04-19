@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region Toolbar Styles-->
+    <style name="Widget.BPBD.Toolbar.Card" parent="">
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">0dp</item>
+    </style>
+
+    <style name="Widget.BPBD.Toolbar.Title" parent="">
+        <item name="android:textAppearance">?attr/textAppearanceHeadline6</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+
+    <style name="Widget.BPBD.Toolbar.UpButton" parent="">
+        <item name="tint">?attr/colorOnBackground</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:src">@drawable/ic_round_arrow_back_ios_24</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="Widget.BPBD.Toolbar.ActionButton" parent="">
+        <item name="tint">?attr/colorOnBackground</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+    <!--endregion Toolbar Styles-->
+
+    <!--region Button Styles-->
+    <style name="Widget.BPBD.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">?attr/colorSecondary</item>
+        <item name="cornerRadius">48dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+    </style>
+
+    <style name="Widget.BPBD.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">48dp</item>
+        <item name="strokeColor">?attr/colorSecondary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+    </style>
+
+    <style name="Widget.BPBD.Button.Small" parent="Widget.BPBD.Button">
+        <item name="cornerRadius">48dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceCaption2</item>
+    </style>
+    <!--endregion Button Styles-->
+
+    <!--region Input Styles -->
+    <style name="Widget.BPBD.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">?attr/colorFormBackground</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="startIconTint">@color/input_icon_start</item>
+        <item name="endIconTint">@color/input_icon_end</item>
+    </style>
+
+    <style name="Widget.BPBD.TextInputLayout.Choice" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">?attr/colorFormBackground</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="startIconTint">@color/input_icon_start</item>
+        <item name="endIconTint">@color/input_icon_end</item>
+    </style>
+
+    <style name="Widget.BPBD.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textColorHint">?attr/colorHint</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="Widget.BPBD.AutoCompleteTextView" parent="Widget.MaterialComponents.AutoCompleteTextView.FilledBox">
+        <item name="android:textColorHint">?attr/colorHint</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">textCapWords</item>
+    </style>
+    <!--endregion Input Styles -->
+
+    <!--region Snackbar Styles-->
+    <style name="Widget.BPBD.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="actionTextColorAlpha">1.0</item>
+        <item name="backgroundTint">?attr/colorDividerSmall</item>
+        <item name="elevation">1dp</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <style name="Widget.BPBD.Snackbar.Text" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">?attr/colorTextPrimary</item>
+    </style>
+
+    <style name="Widget.BPBD.Snackbar.Button" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+    <!--endregion Snackbar Styles-->
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/operator_graph"
+    app:startDestination="@id/operatorHomeFragment">
+
+    <fragment
+        android:id="@+id/operatorHomeFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.home.OperatorHomeFragment"
+        android:label="OperatorHomeFragment" >
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_userCovidFragment2"
+            app:destination="@id/userCovidFragment2" />
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_userSatelliteFragment2"
+            app:destination="@id/userSatelliteFragment2" />
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_userVolcanoFragment2"
+            app:destination="@id/userVolcanoFragment2" />
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_userEarthQuakeFragment2"
+            app:destination="@id/userEarthQuakeFragment2" />
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_operatorProfileDetailFragment"
+            app:destination="@id/operatorProfileDetailFragment" />
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_operatorReportDetailFragment"
+            app:destination="@id/operatorReportDetailFragment" />
+        <action
+            android:id="@+id/action_operatorHomeFragment_to_operatorReportListFragment"
+            app:destination="@id/operatorReportListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/operatorProfileFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.profile.OperatorProfileFragment"
+        android:label="OperatorProfileFragment" >
+        <action
+            android:id="@+id/action_operatorProfileFragment_to_userProfileAboutFragment2"
+            app:destination="@id/userProfileAboutFragment2" />
+        <action
+            android:id="@+id/action_operatorProfileFragment_to_operatorProfileDetailFragment"
+            app:destination="@id/operatorProfileDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/operatorReportFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.report.OperatorReportFragment"
+        android:label="OperatorReportFragment" >
+        <action
+            android:id="@+id/action_operatorReportFragment_to_operatorReportDetailFragment"
+            app:destination="@id/operatorReportDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userCovidFragment2"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.covid.UserCovidFragment"
+        android:label="UserCovidFragment" />
+    <fragment
+        android:id="@+id/operatorProfileDetailFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.profile.detail.OperatorProfileDetailFragment"
+        android:label="OperatorProfileDetailFragment" >
+        <action
+            android:id="@+id/action_operatorProfileDetailFragment_to_operatorProfileUpdateFragment"
+            app:destination="@id/operatorProfileUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/operatorProfileUpdateFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.profile.update.OperatorProfileUpdateFragment"
+        android:label="OperatorProfileUpdateFragment" />
+    <fragment
+        android:id="@+id/operatorReportDetailFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.report.detail.OperatorReportDetailFragment"
+        android:label="OperatorReportDetailFragment" >
+        <argument
+            android:name="reportId"
+            app:argType="long" />
+        <argument
+            android:name="readOnly"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/operatorReportListFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.report.list.OperatorReportListFragment"
+        android:label="OperatorReportListFragment" >
+        <action
+            android:id="@+id/action_operatorReportListFragment_to_operatorReportDetailFragment"
+            app:destination="@id/operatorReportDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userEarthQuakeFragment2"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.earthquake.UserEarthQuakeFragment"
+        android:label="UserEarthQuakeFragment" />
+    <fragment
+        android:id="@+id/userProfileAboutFragment2"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.profile.about.UserProfileAboutFragment"
+        android:label="UserProfileAboutFragment" />
+    <fragment
+        android:id="@+id/userSatelliteFragment2"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.satellite.UserSatelliteFragment"
+        android:label="UserSatelliteFragment" />
+    <fragment
+        android:id="@+id/userVolcanoFragment2"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.volcano.UserVolcanoFragment"
+        android:label="UserVolcanoFragment" />
+    <fragment
+        android:id="@+id/operatorGuideFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.guide.OperatorGuideFragment"
+        android:label="OperatorGuideFragment" >
+        <action
+            android:id="@+id/action_operatorGuideFragment_to_userGuideDetailFragment2"
+            app:destination="@id/userGuideDetailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/operatorNewsDetailFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.news.detail.OperatorNewsDetailFragment"
+        android:label="OperatorNewsDetailFragment" >
+        <argument
+            android:name="news"
+            app:argType="id.go.blitarkab.bpbd.domain.model.News" />
+    </fragment>
+    <fragment
+        android:id="@+id/operatorNewsFragment"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.operator.news.OperatorNewsFragment"
+        android:label="OperatorNewsFragment" >
+        <action
+            android:id="@+id/action_operatorNewsFragment_to_operatorNewsDetailFragment"
+            app:destination="@id/operatorNewsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userGuideDetailFragment2"
+        android:name="id.go.blitarkab.bpbd.presentation.ui.user.guide.detail.UserGuideDetailFragment"
+        android:label="UserGuideDetailFragment" >
+        <argument
+            android:name="guide"
+            app:argType="id.go.blitarkab.bpbd.domain.model.Guide" />
+    </fragment>
+</navigation>

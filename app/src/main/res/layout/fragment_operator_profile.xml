@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.profile.OperatorProfileContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.operator.profile.OperatorProfileContract.Presenter" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{() -> presenter.loadData()}"
+        app:refreshing="@{presenter.stateLoading}"
+        tools:context=".presentation.ui.operator.profile.OperatorProfileFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/title_profile"
+                    android:textAppearance="?attr/textAppearanceHeadline4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_rounded_rect_30"
+                    android:backgroundTint="?attr/colorIndicator"
+                    android:contentDescription="@null"
+                    app:layout_constraintStart_toStartOf="@id/text_title"
+                    app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintEnd_toStartOf="@id/button_detail"
+                    app:layout_constraintStart_toStartOf="@id/text_title"
+                    app:layout_constraintTop_toBottomOf="@id/image_profile"
+                    tools:text="@tools:sample/lorem" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textAppearance="?attr/textAppearanceCaption1"
+                    android:textColor="?attr/colorTextSecondary"
+                    app:layout_constraintEnd_toEndOf="@id/text_name"
+                    app:layout_constraintStart_toStartOf="@id/text_name"
+                    app:layout_constraintTop_toBottomOf="@id/text_name"
+                    tools:text="deri@test.com" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_detail"
+                    style="@style/Widget.BPBD.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> view.openProfileDetailPage()}"
+                    android:text="@string/action_detail"
+                    app:layout_constraintBottom_toBottomOf="@id/text_email"
+                    app:layout_constraintEnd_toEndOf="@id/text_title"
+                    app:layout_constraintTop_toTopOf="@id/text_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:onClick="@{() -> view.openReviewAppPage()}"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/title_review_app"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:drawableStartCompat="@drawable/ic_review_24"
+                    app:drawableTint="?attr/colorIcon"
+                    app:layout_constraintTop_toBottomOf="@id/text_email" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> view.openAboutPage()}"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/title_about"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:drawableStartCompat="@drawable/ic_about_24"
+                    app:drawableTint="?attr/colorIcon"
+                    app:layout_constraintTop_toBottomOf="@id/text_review" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="12dp"
+                    android:onClick="@{() -> view.showLogoutConfirmationDialog()}"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/action_exit"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:drawableStartCompat="@drawable/ic_exit_24"
+                    app:drawableTint="?attr/colorIcon"
+                    app:layout_constraintTop_toBottomOf="@id/text_about" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

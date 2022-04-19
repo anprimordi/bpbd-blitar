@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorBackground" format="reference|color" />
+    <attr name="colorDividerSmall" format="reference|color" />
+    <attr name="colorFormBackground" format="reference|color" />
+    <attr name="colorHint" format="reference|color" />
+    <attr name="colorIcon" format="reference|color" />
+    <attr name="colorIndicator" format="reference|color" />
+    <attr name="colorStatus1" format="reference|color" />
+    <attr name="colorStatus2" format="reference|color" />
+    <attr name="colorStatus3" format="reference|color" />
+    <attr name="colorStatus4" format="reference|color" />
+    <attr name="colorTextPrimary" format="reference|color" />
+    <attr name="colorTextSecondary" format="reference|color" />
+
+    <attr name="textAppearanceSubtitle3" format="reference" />
+    <attr name="textAppearanceCaption1" format="reference" />
+    <attr name="textAppearanceCaption2" format="reference" />
+    <attr name="textAppearanceOverline1" format="reference" />
+    <attr name="textAppearanceOverline2" format="reference" />
+</resources>

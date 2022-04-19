@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="countryCovid"
+            type="id.go.blitarkab.bpbd.domain.model.Covid" />
+
+        <variable
+            name="view"
+            type="id.go.blitarkab.bpbd.presentation.ui.user.covid.UserCovidContract.View" />
+
+        <variable
+            name="presenter"
+            type="id.go.blitarkab.bpbd.presentation.ui.user.covid.UserCovidContract.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.user.covid.UserCovidFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_toolbar"
+            style="@style/Widget.BPBD.Toolbar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_action_up"
+                    style="@style/Widget.BPBD.Toolbar.UpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="@{!presenter.stateLoading}"
+                    android:contentDescription="@null"
+                    android:onClick="@{() -> view.closePage()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.BPBD.Toolbar.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_covid_information"
+                    app:layout_constraintBottom_toBottomOf="@id/image_action_up"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/image_action_up"
+                    app:layout_constraintTop_toTopOf="@id/image_action_up" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_bg_covid"
+            app:layout_constraintTop_toBottomOf="@id/card_toolbar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:onRefreshListener="@{() -> presenter.loadData()}"
+            app:refreshing="@{presenter.stateLoading}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_toolbar">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_indonesia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/plain_indonesia"
+                        android:textAppearance="?attr/textAppearanceHeadline4"
+                        android:textColor="?attr/colorOnSecondary"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_message"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/msg_covid_header"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?attr/colorTextSecondary"
+                        app:layout_constraintEnd_toEndOf="@id/text_indonesia"
+                        app:layout_constraintStart_toStartOf="@id/text_indonesia"
+                        app:layout_constraintTop_toBottomOf="@id/text_indonesia" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_covid_total"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="96dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="1dp"
+                        app:layout_constraintEnd_toStartOf="@id/card_covid_positive"
+                        app:layout_constraintStart_toStartOf="@id/text_indonesia"
+                        app:layout_constraintTop_toBottomOf="@id/text_message">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/plain_total_case"
+                                android:textAppearance="?attr/textAppearanceCaption1"
+                                android:textColor="?attr/colorTextSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="4dp"
+                                android:text="@{countryCovid.totalCase}"
+                                android:layout_marginEnd="12dp"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                tools:text="1234" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="16dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_covid_total" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_covid_positive"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="1dp"
+                        app:layout_constraintEnd_toEndOf="@id/text_indonesia"
+                        app:layout_constraintStart_toEndOf="@id/card_covid_total"
+                        app:layout_constraintTop_toTopOf="@id/card_covid_total">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/plain_positive"
+                                android:textAppearance="?attr/textAppearanceCaption1"
+                                android:textColor="?attr/colorTextSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="12dp"
+                                android:text="@{countryCovid.totalPositive}"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                tools:text="1234" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="16dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_covid_positive" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_covid_recovered"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="1dp"
+                        app:layout_constraintEnd_toStartOf="@id/card_covid_died"
+                        app:layout_constraintStart_toStartOf="@id/text_indonesia"
+                        app:layout_constraintTop_toBottomOf="@id/card_covid_total">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/plain_recovered"
+                                android:textAppearance="?attr/textAppearanceCaption1"
+                                android:textColor="?attr/colorTextSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="@{countryCovid.totalRecovered}"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="12dp"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                tools:text="1234" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="16dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_covid_recovered" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_covid_died"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="1dp"
+                        app:layout_constraintEnd_toEndOf="@id/text_indonesia"
+                        app:layout_constraintStart_toEndOf="@id/card_covid_recovered"
+                        app:layout_constraintTop_toTopOf="@id/card_covid_recovered">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/plain_died"
+                                android:textAppearance="?attr/textAppearanceCaption1"
+                                android:textColor="?attr/colorTextSecondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="4dp"
+                                android:text="@{countryCovid.totalDied}"
+                                android:layout_marginEnd="12dp"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                tools:text="1234" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="16dp"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_covid_died" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.48" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_area"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/shape_rounded_rect_4"
+                        android:backgroundTint="?attr/colorFormBackground"
+                        android:padding="8dp"
+                        android:text="@string/plain_area"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        app:layout_constraintEnd_toEndOf="@id/guideline"
+                        app:layout_constraintStart_toStartOf="@id/text_indonesia"
+                        app:layout_constraintTop_toBottomOf="@id/card_covid_recovered" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_area_total"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/shape_rounded_rect_4"
+                        android:backgroundTint="?attr/colorFormBackground"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/plain_t"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorStatus3"
+                        app:layout_constraintEnd_toStartOf="@id/text_area_recovered"
+                        app:layout_constraintStart_toStartOf="@id/guideline"
+                        app:layout_constraintTop_toTopOf="@id/text_area" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_area_recovered"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/shape_rounded_rect_4"
+                        android:backgroundTint="?attr/colorFormBackground"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/plain_s"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorStatus4"
+                        app:layout_constraintEnd_toStartOf="@id/text_area_died"
+                        app:layout_constraintStart_toEndOf="@id/text_area_total"
+                        app:layout_constraintTop_toTopOf="@id/text_area" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_area_died"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:background="@drawable/shape_rounded_rect_4"
+                        android:backgroundTint="?attr/colorFormBackground"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/plain_m"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        android:textColor="?attr/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="@id/text_indonesia"
+                        app:layout_constraintStart_toEndOf="@id/text_area_recovered"
+                        app:layout_constraintTop_toTopOf="@id/text_area" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="1dp"
+                        android:id="@+id/list_covid"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_covid"
+                        android:paddingBottom="16dp"
+                        app:layout_constraintEnd_toEndOf="@id/text_indonesia"
+                        app:layout_constraintStart_toStartOf="@id/text_indonesia"
+                        app:layout_constraintTop_toBottomOf="@id/text_area" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
